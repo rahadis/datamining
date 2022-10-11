@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; DATA MINING</title>
+    <title>Implementasi K-Means Clustering (Tugas 5) &#8212; DATA MINING</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -113,7 +113,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="markdown.html">
    Markdown Files
@@ -130,6 +130,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="Tugas_1.html">
+   Dissmiliarity (Tugas 1)
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Tugas_2.html">
    Diskritisasi (Tugas 2)
   </a>
@@ -142,6 +147,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="Tugas_4.html">
    Implementasi Naive Bayes  (Tugas 4)
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Implementasi K-Means Clustering (Tugas 5)
   </a>
  </li>
  <li class="toctree-l1">
@@ -333,50 +343,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><no title></h1>
+                <h1>Implementasi K-Means Clustering (Tugas 5)</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -384,7 +367,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <p>#Tugas 5</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="implementasi-k-means-clustering-tugas-5">
+<h1>Implementasi K-Means Clustering (Tugas 5)<a class="headerlink" href="#implementasi-k-means-clustering-tugas-5" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
@@ -429,6 +413,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>1.Baca data bunga iris</p>
+<p>2.Implementasi algoritma Naive Bayes Gaussian untuk menentukan probabilitas kelas dari data tes</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1053,7 +1039,7 @@ title="Print to PDF"
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f0ae9b27890&gt;]
 </pre></div>
 </div>
-<img alt="_images/Tugas_5_18_1.png" src="_images/Tugas_5_18_1.png" />
+<img alt="_images/Tugas_5_19_1.png" src="_images/Tugas_5_19_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1066,7 +1052,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Tugas_5_19_0.png" src="_images/Tugas_5_19_0.png" />
+<img alt="_images/Tugas_5_20_0.png" src="_images/Tugas_5_20_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1098,7 +1084,7 @@ title="Print to PDF"
 b = 763.0440011278193
 </pre></div>
 </div>
-<img alt="_images/Tugas_5_20_1.png" src="_images/Tugas_5_20_1.png" />
+<img alt="_images/Tugas_5_21_1.png" src="_images/Tugas_5_21_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1181,9 +1167,10 @@ b = 763.0440011278193
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f0ae9919b90&gt;]
 </pre></div>
 </div>
-<img alt="_images/Tugas_5_26_1.png" src="_images/Tugas_5_26_1.png" />
+<img alt="_images/Tugas_5_27_1.png" src="_images/Tugas_5_27_1.png" />
 </div>
 </div>
+</section>
 
     <script type="text/x-thebe-config">
     {
