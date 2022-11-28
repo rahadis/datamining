@@ -1,0 +1,59 @@
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/jupyter_cache/executors/utils.py", line 56, in single_nb_execution
+    record_timing=False,
+  File "/usr/local/lib/python3.7/dist-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/usr/local/lib/python3.7/dist-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/usr/local/lib/python3.7/dist-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 587, in run_until_complete
+    return future.result()
+  File "/usr/local/lib/python3.7/dist-packages/nbclient/client.py", line 664, in async_execute
+    cell, index, execution_count=self.code_cells_executed + 1
+  File "/usr/local/lib/python3.7/dist-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/usr/local/lib/python3.7/dist-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import joblib
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn import metrics
+#Try running from k=1 through 30 and record testing accuracy
+k_range = range(1,31)
+scores = {}
+scores_list = []
+for k in k_range:
+        # install model
+        knn = KNeighborsClassifier(n_neighbors=k)
+        knn.fit(X_train,y_train)
+        # save model
+        #filenameKNN = '/content/gdrive/MyDrive/DataMining/TUGAS/Model/KNNmodel'+str(k)+'.pkl'
+        filenameKNN = '/content/gdrive/MyDrive/DataMining/tugas/Model/KNNmodel'+str(k)+'.pkl'
+        joblib.dump(knn,filenameKNN)
+        y_pred=knn.predict(X_test)
+        scores[k] = accuracy_score(y_test,y_pred)
+        scores_list.append(accuracy_score(y_test,y_pred))
+scores
+------------------
+
+[0;31m[0m
+[0;31mFileNotFoundError[0mTraceback (most recent call last)
+[0;32m<ipython-input-16-4e7fb2151479>[0m in [0;36m<module>[0;34m[0m
+[1;32m     13[0m         [0;31m#filenameKNN = '/content/gdrive/MyDrive/DataMining/TUGAS/Model/KNNmodel'+str(k)+'.pkl'[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     14[0m         [0mfilenameKNN[0m [0;34m=[0m [0;34m'/content/gdrive/MyDrive/DataMining/tugas/Model/KNNmodel'[0m[0;34m+[0m[0mstr[0m[0;34m([0m[0mk[0m[0;34m)[0m[0;34m+[0m[0;34m'.pkl'[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 15[0;31m         [0mjoblib[0m[0;34m.[0m[0mdump[0m[0;34m([0m[0mknn[0m[0;34m,[0m[0mfilenameKNN[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     16[0m         [0my_pred[0m[0;34m=[0m[0mknn[0m[0;34m.[0m[0mpredict[0m[0;34m([0m[0mX_test[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     17[0m         [0mscores[0m[0;34m[[0m[0mk[0m[0;34m][0m [0;34m=[0m [0maccuracy_score[0m[0;34m([0m[0my_test[0m[0;34m,[0m[0my_pred[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.7/dist-packages/joblib/numpy_pickle.py[0m in [0;36mdump[0;34m(value, filename, compress, protocol, cache_size)[0m
+[1;32m    550[0m             [0mNumpyPickler[0m[0;34m([0m[0mf[0m[0;34m,[0m [0mprotocol[0m[0;34m=[0m[0mprotocol[0m[0;34m)[0m[0;34m.[0m[0mdump[0m[0;34m([0m[0mvalue[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    551[0m     [0;32melif[0m [0mis_filename[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 552[0;31m         [0;32mwith[0m [0mopen[0m[0;34m([0m[0mfilename[0m[0;34m,[0m [0;34m'wb'[0m[0;34m)[0m [0;32mas[0m [0mf[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    553[0m             [0mNumpyPickler[0m[0;34m([0m[0mf[0m[0;34m,[0m [0mprotocol[0m[0;34m=[0m[0mprotocol[0m[0;34m)[0m[0;34m.[0m[0mdump[0m[0;34m([0m[0mvalue[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    554[0m     [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: '/content/gdrive/MyDrive/DataMining/tugas/Model/KNNmodel1.pkl'
+FileNotFoundError: [Errno 2] No such file or directory: '/content/gdrive/MyDrive/DataMining/tugas/Model/KNNmodel1.pkl'
+

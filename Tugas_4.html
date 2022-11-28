@@ -164,6 +164,16 @@ const thebe_selector_output = ".output, .cell_output"
    Implementasi Naive Bayes Studi Kasus Peminjaman Uang  (Tugas 8)
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tugas_9.html">
+   (Tugas 9)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="UAS.html">
+   UAS Studi Kasus Mobile Price
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -510,7 +520,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-31a66e3e-93b6-42b9-97ec-b7c0352fec1a">
+  <div id="df-8ae12ffc-ea6b-4f93-9257-140a651266c4">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -581,7 +591,7 @@ title="Print to PDF"
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-31a66e3e-93b6-42b9-97ec-b7c0352fec1a')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-8ae12ffc-ea6b-4f93-9257-140a651266c4')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -632,12 +642,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-31a66e3e-93b6-42b9-97ec-b7c0352fec1a button.colab-df-convert');
+          document.querySelector('#df-8ae12ffc-ea6b-4f93-9257-140a651266c4 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-31a66e3e-93b6-42b9-97ec-b7c0352fec1a');
+          const element = document.querySelector('#df-8ae12ffc-ea6b-4f93-9257-140a651266c4');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -702,7 +712,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-fc5dc35d-269b-434b-a530-128714952740">
+  <div id="df-ddb640a5-0572-44d9-99b4-043a2896d3bc">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -767,7 +777,7 @@ title="Print to PDF"
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-fc5dc35d-269b-434b-a530-128714952740')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-ddb640a5-0572-44d9-99b4-043a2896d3bc')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -818,12 +828,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-fc5dc35d-269b-434b-a530-128714952740 button.colab-df-convert');
+          document.querySelector('#df-ddb640a5-0572-44d9-99b4-043a2896d3bc button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-fc5dc35d-269b-434b-a530-128714952740');
+          const element = document.querySelector('#df-ddb640a5-0572-44d9-99b4-043a2896d3bc');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -854,16 +864,20 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="n">percent_amount_of_test_data</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># separate target </span>
+
+<span class="c1"># values</span>
+<span class="n">X</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="c1"># classes</span>
+<span class="n">y</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">NameError</span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">94</span><span class="n">ea3eb48386</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="n">percent_amount_of_test_data</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;y&#39; is not defined
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="n">percent_amount_of_test_data</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
